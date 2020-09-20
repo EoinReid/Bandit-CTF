@@ -204,3 +204,155 @@ cat:  this: No such file or directory
 cat: filename: No such file or directory
 ```
 This is due to bash reading the spaces in between each other as seperate filenames instead of the name of one file with spaces in its name, to get around this we can add "" or '' quotation marks to specify it is a file of one name with spaces in the name.
+
+# Level 3 → Level 4
+
+## Level Goal
+The password for the next level is stored in a hidden file in the inhere directory.
+
+## Walkthrough
+
+```
+ls
+```
+
+From the ls command we can see there is another directory called "inhere", this is the directory the level goal specified so we are going to change to that directory.
+
+```
+cd inhere
+```
+Changing to the inhere directory.
+
+```
+ls -a
+```
+As the level goal descriptor specified a "hidden" file, we are going to use the ls command in this directory with the -a attribute so that it lists all contents in this directory even hidden files.
+
+```
+cat .hidden
+```
+From the ls -a command we found a hidden file called .hidden, so we are going to use the cat command to print its contents to the terminal.
+
+### Flag captured
+```
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+```
+After capturing our flag we are going to move to the next level, which is called bandit4, using the following command.
+
+```
+ssh bandit4@localhost
+```
+Enter the flag from above when prompted for the password for the next level.
+
+![bandit34-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit34-1.PNG "Bandit34 Terminal Commands")
+
+## New Commands breakdown
+
+```
+ls -a
+```
+Filenames that start with a "." are hidden from the directory, so using a normal ls command would turn up no results. Using the -a attritbute with the ls command allows you to see all files in a directory inlucding hidden files beginnging with "."
+
+# Level 4 → Level 5
+
+## Level Goal
+The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
+
+## Walkthrough
+
+```
+ls
+```
+
+From the ls command we can see there is another directory called "inhere", this is the directory the level goal specified so we are going to change to that directory.
+
+```
+cd inhere
+```
+Changing to the inhere directory.
+
+```
+ls -l
+```
+As the level goal descriptor says human-readable file I used the -l attribute with the ls command to list the contents of the directory in a long format to see if it would give us some more useful information.
+
+```
+cat ./*
+```
+From the ls -l command we were able to learn that the files are all of the same type, so the quickest way to see the contents of all the files at once is using the cat command with ./* which will print all the contents of all the files in this directory to the terminal instead of having to cat each file manually.
+
+### Flag captured
+```
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+```
+After capturing our flag we are going to move to the next level, which is called bandit5, using the following command.
+
+```
+ssh bandit5@localhost
+```
+Enter the flag from above when prompted for the password for the next level.
+
+![bandit45-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit45-1.PNG "Bandit45 Terminal Commands")
+
+## New Commands breakdown
+
+```
+ls -l
+```
+ -l for long, this shows a detailed list of files in a long format. This will show you detailed information, starting from the left: file permissions, number of links, owner name, owner group, file size, timestamp of last modification, and file/directory name. 
+ 
+ # Level 5 → Level 6
+
+## Level Goal
+The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
+	* human-readable
+	* 1033 bytes in size
+	* not executable
+
+## Walkthrough
+
+```
+ls
+```
+
+From the ls command we can see there is another directory called "inhere", this is the directory the level goal specified so we are going to change to that directory.
+
+```
+cd inhere
+```
+Changing to the inhere directory.
+
+```
+ls 
+```
+I used the ls command to get a bearing on what is within the inhere directory this time, and from it we can see an array of different maybehere directories.
+
+```
+find -size 1033c
+```
+As the level goal descriptor says the file size is 1033 bytes, we can use the find command to search for a file in this directory that is 1033 bytes in size, using the -size attribute and appending c to the end of 1033 to specify to the terminal we are looking for 1033 bytes.
+
+```
+cat ./maybehere07/.file2
+```
+From the find command the terminal returned the file and location "./maybehere07/.file2", so I then used the cat command to print its contents to the terminal.
+
+### Flag captured
+```
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+```
+After capturing our flag we are going to move to the next level, which is called bandit6, using the following command.
+
+```
+ssh bandit6@localhost
+```
+Enter the flag from above when prompted for the password for the next level.
+
+![bandit56-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit56-1.PNG "Bandit56 Terminal Commands")
+
+## New Commands breakdown
+
+```
+find -size 1033c
+```
+ The find command is heplful for finding a specific file that you don't know the location of. In the find command we used in this walkthrough we used the -size attribute to specify we are looking for a file of a particular size, in this case 1033 bytes, we then wrote the size 1033 and added a c to specify it is 1033 bytes in size.
