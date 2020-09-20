@@ -16,7 +16,8 @@ ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 After running the command we will be prompted to enter a password to continue to the level, this password is bandit0 as stated in the level goal above.
 
-###### add bandit1-0 here
+![bandit0-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit0-1.PNG "Bandit0 Terminal Commands")
+
 
 ## Commands breakdown
 
