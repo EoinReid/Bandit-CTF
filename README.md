@@ -74,7 +74,7 @@ ssh bandit1@localhost
 ```
 Enter the flag from above when prompted for the password for the next level.
 
-###### add bandit01-1 here
+![bandit01-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit01-1.PNG "Bandit01 Terminal Commands")
 
 ## New Commands breakdown
 
@@ -137,7 +137,7 @@ ssh bandit2@localhost
 ```
 Enter the flag from above when prompted for the password for the next level.
 
-###### add bandit12-1 here
+![bandit12-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit12-1.PNG "Bandit12 Terminal Commands")
 
 ## New Commands breakdown
 
@@ -183,7 +183,7 @@ ssh bandit3@localhost
 ```
 Enter the flag from above when prompted for the password for the next level.
 
-###### add bandit23-1 here
+![bandit23-terminal-commands-screenshot](https://raw.githubusercontent.com/EoinReid/Bandit-CTF/master/Bandit-Screencaps/bandit23-1.PNG "Bandit23 Terminal Commands")
 
 ## New Commands breakdown
 
